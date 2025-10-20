@@ -1,0 +1,22 @@
+body
+{
+    font-family: sans-serif;
+    background-color: #dcffef;
+}
+
+main
+{
+    min-height: calc(100vh - 56px - 56px);
+}
+
+.textarea{
+    height:200px;
+}
+
+.big-button {
+    font-size: 1.5rem; /* Bigger text */
+    padding: 15px 30px; /* More padding */
+    width: 100%; /* Full width */
+    max-width: 300px; /* Optional: set max width */
+    display: inline-block;
+}
