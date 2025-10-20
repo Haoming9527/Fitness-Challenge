@@ -4,7 +4,7 @@
 This project is a web application for managing fitness challenges. Users can register, log in, create challenges, track progress, review challenge, collect pets and interact with other participants. The backend is built using Node.js, Express, MySQL, JWT authentication, and bcrypt for password security.
 
 # Folder Structures
-BED-CA2-P2429030-1B04/
+Fitness-Challenge/
 ├── public/
 │   ├── css/
 │   │   ├──color.css
