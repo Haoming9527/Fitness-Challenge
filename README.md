@@ -1,150 +1,192 @@
-# Fitness Challenge Web App
+# Fitness Challenge
+#### Video Demo:  https://youtu.be/OVn_msknZ2c
+#### Description:
+A comprehensive web application for managing fitness challenges built with Node.js, Express, and MySQL. Users can participate in fitness challenges, track progress, collect virtual pets, write reviews, and interact with a community of fitness enthusiasts.
 
-# Project Overview
-This project is a web application for managing fitness challenges. Users can register, log in, create challenges, track progress, review challenge, collect pets and interact with other participants. The backend is built using Node.js, Express, MySQL, JWT authentication, and bcrypt for password security.
+## Features
 
-# Folder Structures
-Fitness-Challenge/
-├── public/
-│   ├── css/
-│   │   ├──color.css
-│   │   └──style.css
-│   ├── images/
-│   │   ├──challenge.png
-│   │   ├──logo.jpg
-│   │   ├──pet1.png
-│   │   ├──pet2.png
-│   │   ├──pet3.png
-│   │   ├──pet4.png
-│   │   ├──pet5.png
-│   │   ├──pet6.png
-│   │   ├──pet7.png
-│   │   ├──pet8.png
-│   │   ├──pet9.png
-│   │   ├──pet10.png
-│   │   ├──pet11.png
-│   │   ├──pet12.png
-│   │   ├──pet13.png
-│   │   ├──pet14.png
-│   │   └──pet15.png
-│   ├── js/
-│   │   ├──CreateChallenge.js
-│   │   ├──CreateChallengeRecord.js
-│   │   ├──CreateReview.js
-│   │   ├──getCurrentURL.js
-│   │   ├──getProfile.js
-│   │   ├──getSingleUserInfo.js
-│   │   ├──loginUser.js
-│   │   ├──queryCmds.js
-│   │   ├──registerUser.js
-│   │   ├──showAllChallenge.js
-│   │   ├──showAllChallengeRecord.js
-│   │   ├──showAllPet.js
-│   │   ├──showAllUser.js
-│   │   ├──UpdateChallenge.js
-│   │   ├──UpdateReview.js
-│   │   ├──UpdateUsername.js
-│   │   └──userNavbarToggle.js
-│   ├── challengerecord.html
-│   ├── completechallenge.html
-│   ├── createchallenge.html
-│   ├── createReview.html
-│   ├── editChallenge.html
-│   ├── editReview.html
-│   ├── editUsername.html
-│   ├── index.html
-│   ├── login.html
-│   ├── petshop.html
-│   ├── profile.html
-│   ├── register.html
-│   ├── review.html
-│   ├── singleUser.html
-│   └── users.html
-│
-├── src/                     
-│   ├── configs/   
-│   │   ├── createSchema.js           
-│   │   └── initTables.js
-│   ├── controllers/          
-│   │   ├── challengeController.js
-│   │   ├── petController.js
-│   │   ├──reviewController.js
-│   │   └── userController.js
-│   ├── middlewares/ 
-│   │   ├── bcryptMiddleware.js
-│   │   └── jwtMiddleware.js
-│   ├── models/            
-│   │   ├── challengeModel.js           
-│   │   ├── petModel.js
-│   │   ├── reviewModel.js        
-│   │   └── userModel.js
-│   ├── routes/            
-│   │   ├── mainRoutes.js   
-│   │   ├── challengeRoutes.js          
-│   │   ├── petRoutes.js 
-│   │   ├── reviewRoutes.js       
-│   │   └── userRoutes.js        
-│   ├── services/           
-│   │   └── db.js           
-│   └── app.js              
-├── .env                     
-├── .gitignore
-├── index.js               
-├── package-lock.json
-├── package.json                             
-└── README.md 
+- **User Authentication**: Secure registration and login with JWT tokens
+- **Challenge Management**: Create, update, and participate in fitness challenges
+- **Progress Tracking**: Record challenge completions and earn skill points
+- **Virtual Pet Collection**: Collect pets using earned skill points
+- **Review System**: Write and manage reviews for challenges
+- **User Profiles**: View and edit personal profiles and activity
+- **Community Features**: Browse users and their achievements
 
-# Tech Stack
-Frontend: HTML, CSS, JavaScript
-Backend: Node.js, Express.js
-Database: MySQL
-Authentication: JWT (JSON Web Token)
-Security: bcrypt for password hashing
+## Tech Stack
 
-# Usage Instructions
-Register an account at /register
-Log in at /login
-Access challenges at /challenges
-Update profile information at /profile
+### Backend
+- **Node.js** with **Express.js**
+- **MySQL** database
+- **JWT** for authentication
+- **bcrypt** for password hashing
 
-# API Documentation
-# User Routes
-GET /user – Read all users
-GET /user/:user_id – Read a user by ID
-PUT /user/:user_id – Update a user by ID (checks if username already exists)
-DELETE /user/:user_id – Delete a user by ID
-# Challenge Routes
-GET /challenge/:user_id – Read list of participants by user ID
-GET /challenge/created/:user_id – Read list of challenges created by user ID
-GET /challenge – Read all challenges
-POST /challenge – Create a new challenge
-PUT /challenge/:challenge_id – Update a challenge by ID (checks creator ID)
-DELETE /challenge/:challenge_id – Delete a challenge by ID
-POST /challenge/:challenge_id – Create a new completion record (includes skill points)
-# Review Routes
-GET /review – Read all reviews
-POST /review/:challenge_id – Create a review for a challenge
-PUT /review/:id – Update a review by ID
-DELETE /review/:id – Delete a review by ID
-# Pet Routes
-GET /pet – Read all pets
-GET /pet/owner/:owner_id – Read all owned pets by owner ID
-POST /pet/:pet_id – Create an owned pet (checks if pet exists, deducts skill points)
-DELETE /pet/owner/:owner_id/:id – Delete an owned pet by owner ID and pet ID (refunds skill points)
+### Frontend
+- **HTML5**, **CSS3**, **Vanilla JavaScript**
+- Responsive design with custom styling
 
-# Features
-User authentication (JWT)
-Secure password hashing (bcrypt)
-CRUD operations for users, challenges, reviews, and pets
-Structured MVC architecture
-MySQL database integration
-# Error Handling
-Uses HTTP status codes (e.g., 400 for bad requests, 401 for unauthorized, 500 for server errors)
-Descriptive JSON error messages returned
-Try-catch blocks and error-handling middleware for better debugging
+### Development
+- **Nodemon** for hot reloading
+- **MySQL2** client for database operations
 
-# Developer
-Shen Haoming - Developer
+## Prerequisites
 
-# License
-This project is licensed under the MIT License.
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (version 14 or higher)
+- **npm** (comes with Node.js)
+- **MySQL** server (version 8.0 or higher)
+
+## Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Haoming9527/Fitness-Challenge.git
+   cd fitness-challenge
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Set up the database:**
+   - Create a MySQL database named `fitness`
+   - Update the `.env` file with your MySQL credentials (see Environment Variables section)
+
+4. **Initialize database tables:**
+   ```bash
+   npm run init_tables
+   ```
+
+5. **Configure environment variables:**
+   - Copy the provided `.env` template
+   - Set your database credentials and JWT secret
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+DB_HOST=localhost
+DB_USER=your_mysql_username
+DB_PASSWORD=your_mysql_password
+DB_DATABASE=fitness
+JWT_SECRET_KEY=your-secret-key
+JWT_EXPIRES_IN=15m
+JWT_ALGORITHM=HS256
+```
+
+**Note:** Replace the values with your actual MySQL credentials.
+
+## Usage
+
+1. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+2. **Or start the production server:**
+   ```bash
+   npm start
+   ```
+
+3. **Access the application:**
+   Open your browser and navigate to `http://localhost:3000` (or the configured port)
+
+### User Guide
+
+- **Register**: Visit `/register` to create a new account
+- **Login**: Visit `/login` to sign in
+- **Challenges**: Browse and join fitness challenges at `/challenges`
+- **Profile**: Manage your profile and pets at `/profile`
+- **Pet Shop**: Collect new pets using skill points at `/petshop`
+
+## API Documentation
+
+The application provides a RESTful API with the following endpoints:
+
+### User Routes
+```http
+GET  /user/           - Get all users
+GET  /user/:user_id   - Get user by ID
+PUT  /user/:user_id   - Update user (validates unique username)
+DELETE /user/:user_id - Delete user
+```
+
+### Challenge Routes
+```http
+GET  /challenge/user/:user_id     - Get challenges the user is participating in
+GET  /challenge/created/:user_id  - Get challenges created by the user
+GET  /challenge/                  - Get all challenges
+POST /challenge/                  - Create a new challenge
+PUT  /challenge/:challenge_id     - Update challenge (requires creator permission)
+DELETE /challenge/:challenge_id   - Delete challenge (requires creator permission)
+POST /challenge/complete/:challenge_id - Complete a challenge (awards skill points)
+```
+
+### Review Routes
+```http
+GET  /review/           - Get all reviews
+POST /review/:challenge_id - Create review for a specific challenge
+PUT  /review/:review_id - Update review (requires author permission)
+DELETE /review/:review_id - Delete review (requires author permission)
+```
+
+### Pet Routes
+```http
+GET  /pet/                        - Get all available pets
+GET  /pet/owner/:owner_id          - Get pets owned by a user
+POST /pet/buy/:pet_id              - Purchase a pet (deducts skill points)
+DELETE /pet/owner/:owner_id/:pet_id - Sell a pet (refunds skill points)
+```
+
+## Project Structure
+
+```
+fitness-challenge/
+├── public/                    # Static frontend files
+│   ├── css/                   # Stylesheets
+│   ├── images/                # Image assets
+│   ├── js/                    # Client-side JavaScript
+│   └── *.html                 # HTML pages
+├── src/                       # Backend source code
+│   ├── configs/               # Database configuration and setup
+│   ├── controllers/           # Route controllers
+│   ├── middlewares/           # Express middlewares (auth, security)
+│   ├── models/                # Database models
+│   ├── routes/                # API route definitions
+│   ├── services/              # Database and utility services
+│   └── app.js                 # Express application setup
+├── .env                       # Environment variables (gitignored)
+├── .gitignore                 # Git ignore rules
+├── index.js                   # Application entry point
+├── package.json               # Dependencies and scripts
+└── README.md                  # Project documentation
+```
+
+## Error Handling
+
+The application implements comprehensive error handling:
+- HTTP status codes (400 Bad Request, 401 Unauthorized, 500 Internal Server Error)
+- Descriptive JSON error responses
+- Middleware for centralized error management
+- Input validation and sanitization
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin feature-name`
+5. Submit a pull request
+
+## Developer
+
+**Shen Haoming** - [GitHub](https://github.com/Haoming9527)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
